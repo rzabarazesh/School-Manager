@@ -7,13 +7,17 @@
 #include <QLineEdit>
 #include <QLabel>
 
+
 #include <student.h>
 #include<iostream>
 
 management::management(QWidget *parent) :
     QDialog(parent)
 {
+
     this->setWindowTitle("مدیریت");
+    this->setMinimumHeight(500);
+    this->setMaximumWidth(650);
      //STUDENTS
 
      st[0]= new student("علی","19","12","14","17","HAZER");
@@ -77,6 +81,7 @@ management::management(QWidget *parent) :
     table->setColumnCount(6);
     table->setRowCount(10);
     QTableWidgetItem * item ;
+    QStringList titles();
 
 
     QString titrs[] = {"---","ریاضی","فیزیک","شیمی","انظباط","حضور و غیاب"};
@@ -92,6 +97,7 @@ management::management(QWidget *parent) :
     manage_layout->addLayout(manage_btns);
 
     this->setLayout(manage_layout);
+
 
 }
 void management::setuser (int usr)
