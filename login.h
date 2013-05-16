@@ -22,8 +22,9 @@ private :
     QLineEdit * password ;
     QVBoxLayout * login_layout ;
     QHBoxLayout * button_layout ;
+
 signals:
-    void showmanage() ;
+    void showmanage(int i) ;
 public slots:
    void finduser();
 
