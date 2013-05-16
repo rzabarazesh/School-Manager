@@ -1,14 +1,23 @@
 #ifndef STUDENT_H
 #define STUDENT_H
-#include <string>
+
+#include <QTableWidgetItem>
+
 class student
 {
 public:
-    int riazi , fizik , shimi , enzebat ;
-    std::string name ;
-    int hozur[10];
+    student();
+    student(QString e,QString r,QString f,QString sh,QString en,QString hz);
+    void set_all(QString e,QString r,QString f,QString sh,QString en,QString hz);
 
-    student(std::string i_name );
+    QTableWidgetItem *riazi;
+    QTableWidgetItem *fizik;
+    QTableWidgetItem *shimi;
+    QTableWidgetItem *enzebat;
+    QTableWidgetItem *hozur;
+    QTableWidgetItem *esm;
+
+
 };
 
 #endif // STUDENT_H

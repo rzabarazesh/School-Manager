@@ -2,27 +2,19 @@
 #include "login.h"
 #include <iostream>
 #include <string>
-void login::finduser()
-{
 
-
-
-    emit showmanage() ;
-
-    return;
-}
 login::login(QWidget *parent) :
     QDialog(parent)
 {
-    QPushButton * login_button = new QPushButton;
-    QPushButton * exit = new QPushButton;
+    login_button = new QPushButton;
+    exit = new QPushButton;
     login_button->setText("LOGIN");
     exit->setText("EXIT");
 
-    QLineEdit * username  = new QLineEdit;
-    QLineEdit * password  = new QLineEdit;
-    QVBoxLayout * login_layout = new  QVBoxLayout ;
-    QHBoxLayout * button_layout = new  QHBoxLayout ;
+    username  = new QLineEdit;
+    password  = new QLineEdit;
+    login_layout = new  QVBoxLayout ;
+    button_layout = new  QHBoxLayout ;
     username->setText("Enter Username ...");
     password->setText("Enter Password ... ");
 
@@ -39,5 +31,12 @@ login::login(QWidget *parent) :
     this->connect(login_button,SIGNAL(clicked()),this,SLOT(finduser()));
 }
 
+void login::finduser()
+{
 
+    if (username->text()=="moalem"&&password->text()=="moalem")
+    emit showmanage() ;
+
+    return;
+}
 
